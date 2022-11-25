@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="nestedApp" lang="en">
+
+<head>
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1>Nested Controllers App</h1>
+
+  <!-- 1. These 2 variables, though they share the same name are NOT the same, because they belong to different Scope objects -->
+  <div ng-controller="parallelCtrl1">{{testProp}}</div>
+  <div ng-controller="parallelCtrl2">{{testProp}}</div>
+
+  <!-- 2. NESTED CONTROLLERS  -->
+
+  <!-- proper standard is to use 'as' so we can have access to the specific controller when accessing the variables -->
+  <div ng-controller="nestedCtrl1 as c1">
+    {{c1.testProp}}
+
+    <div ng-controller="nestedCtrl2 as c2">
+      <p>{{c1.testProp}}</p>
+      <p>{{c2.testProp}}</p>
+    </div>
+
+  </div>
+
+</body>
+<script>
+  /**
+   *  1.  DUPLICATE VARIABLE NAMES
+   *        Each time we make a new controller (in JS), a NEW $scope object is created. They are NOT the same 
+   * 
+   *  2.  NESTED CONTROLLERS
+   **       HTML side:
+   *          with nested, best practice is to use the 'as' notation in HTML. 
+   *          This allows us to use the specific variable from the specified controller's scope
+   **       JS side:
+   *          $scope arg is now left empty & we use 'this' instead
+   * */
+</script>
+
+</html>

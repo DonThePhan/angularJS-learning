@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="moreDirectivesApp" lang="en">
+
+<head>
+  <title>More Directives App</title>
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1>More Directives</h1>
+  <div ng-controller='MoreDirectivesCtrl as ctrl'>
+    <input type="checkbox" ng-model='ctrl.checked' />
+
+    <!-- 1. ng-hide -->
+    <p ng-hide="ctrl.checked">Some content</p>
+    <p ng-if="ctrl.checked">Some content</p>
+    <hr>
+
+    <!-- 2. ng-repeat -->
+    <div ng-repeat="obj in ctrl.myList">
+      <p>Name: {{obj.name}}</p>
+      <p>Age: {{obj.age}}</p>
+
+      <!-- 2.1. ng-repeat VARIABLES -->
+      <ul>
+        <li>Index: {{$index}}</li>
+        <li>First: {{$first}}</li>
+        <li>Middle: {{$middle}}</li>
+        <li>Last: {{$last}}</li>
+        <li>Even: {{$even}}</li>
+        <li>Odd: {{$odd}}</li>
+      </ul>
+      <hr>
+    </div>
+  </div>
+</body>
+
+<script>
+  /**
+   *  1.  NG-HIDE/SHOW
+   *      Different from ng-if. ng-if removes if not sure. ng-hide just hides using CSS
+   * 
+   *  2.  NG-REPEAT - use it iterate through arrays
+   *      1.  Special variables - $index, $first, $middle, $last, $even $odd
+  */
+
+</script>
+
+</html>

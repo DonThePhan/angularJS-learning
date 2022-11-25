@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<!--  2.1 - DECLARE angular in file 'ng-app'. 
+        5 - In this case we are ALSO LINKING the angular module we declared in the script at the bottom ('myApp')  -->
+<html ng-app="myApp" lang="en">
+
+<head>
+
+  <!--  1. IMPORT the angular script  -->
+  <script src="../angular.js"></script>
+</head>
+
+<!--  2.2 - can INITIALIZE VARIABLES using 'ng-init'  (see directly below) the var below is actually now a property of the scope (i.e. scope.hourOfDay) -->
+
+<body ng-init="hourOfDay = 10; userName = 'Donny'">
+
+  <!-- 6 - before angular renderings this div's children it will call the func associated w/ the linked controller -->
+  <div ng-controller="MainCtrl">
+
+    <h1>Hello Angular</h1>
+
+    <!--  2.3 - Angular LOGIC  -->
+    <p ng-if="true">Active</p>
+    <p ng-if="false">Not Active</p>
+    <p ng-if="hourOfDay < 12">it's still morning!</p>
+    <p ng-if="otherHourOfDay > 18">it's late!</p>
+
+    <!-- INSERTING VAR VALUES into elements -->
+
+    <!-- w/ ng-bind -->
+    <p ng-bind="hourOfDay"></p>
+    <p>the hour of the day is: <span ng-bind="hourOfDay"></span></p>
+
+    <!-- w/ {{}} -->
+    <p>Hi! My name is {{userName}}</p>
+    <p>Spiderman's real identity is {{spiderManIdentity}}</p>
+  </div>
+
+  <script>
+
+    /**
+     *! YOUTUBE RESOURCE
+     * https://www.youtube.com/watch?v=7qq9VDO_28k&list=PLqq-6Pq4lTTbWLgk2YspgXA_xORzD0Ax6
+     * 
+     **  HTML SIDE
+     *  1.  IMPORT angular.js script. 
+     *      When angular starts, it creates this object called a SCOPE in the html,
+     *      a container where all your variables will be placed.
+     * 
+     *  2.  Now we have access to a specific set of angular attributes call DIRECTIVES (check how they're used above). 
+     *      These Directives can communicate w/ each other through the SCOPE
+     *        1.  ng-app  ->  declare in html element to DECLARE it as an angular app so we can start using angular
+     *        2.  ng-init ->  declare VARIABLES into the Scope
+     *        3.  ng-if   ->  CONDITIONAL elements
+     * 
+     **  JS SIDE:
+     *  3.  MODULE        -> created from angular object
+     *  4.  CONTROLLER    -> created from the module
+     * 
+     ** back to HTML
+        5.  link the module w/ ng-app
+     *  6.  ng-controller -> now we can link controller from js to html
+            The func linked to the controller will execute before the children of the controller's elements are rendered
+    */
+
+    // by putting in '$scope', angular knows to pass in the scope object when running the function. Any other arg name won't work
+    const Main = ($scope) => {
+      console.log('Main function called');
+      $scope.spiderManIdentity = 'Peter Parker'
+    }
+
+    // we have access to global variable 'angular', after we imported the angular script
+
+    // 3 - create angular MODULE:
+    let module = angular.module(
+      'myApp',  // module NAME
+      []        // array
+    )
+
+    // 4 - set module CONTROLLER
+    module.controller(
+      'MainCtrl', // controller NAME
+      Main        // function 
+    )
+
+  </script>
+
+</body>
+
+</html>

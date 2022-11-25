@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="ngModelExamples" lang="en">
+
+<head>
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="ExamplesCtrl">
+  <h1>ngModel Examples App</h1>
+
+  <!-- We can use the same ng-model variable in multiple inputs. They will all be linked together -->
+  <p>Textbox: <input type="text" ng-model="textString" ng-change="textBoxChange()"></p>
+  <p>Textbox: <input type="text" ng-model="textString" ng-change="textBoxChange()"></p>
+  <p>Textbox: <input type="text" ng-model="textString" ng-change="textBoxChange()"></p>
+  <p>Textbox: <input type="text" ng-model="textString" ng-change="textBoxChange()"></p>
+
+  <p>Checkbox: <input type="checkbox" ng-model="booleanValue"></p>
+
+  <p>Date: <input type="date" ng-model="dateValue"></p>
+
+  <!-- just by using the same ng-model variable, these radio inputs are bound together -->
+  <p>Radio:
+    <input type="radio" ng-model="radioValue" value="opt1">1</input>
+    <input type="radio" ng-model="radioValue" value="opt2">2</input>
+    <input type="radio" ng-model="radioValue" value="opt3">3</input>
+  </p>
+
+  <div>
+    <p>Textbox: {{textString}}</p>
+    <p>Checkbox:{{booleanValue}}</p>
+    <p>Date:{{dateValue.toTimeString()}}</p>
+    <p>Radio: {{radioValue}}</p>
+  </div>
+</body>
+
+<script>
+  /**
+   *  1.  We can declare scope variables by just using ng-model. 
+   *      It will AUTOMATICALLY INITIALIZE as soon as we start changing the input values
+   *      This means we DON'T need to declare it in the JS side.
+   */
+</script>
+
+</html>

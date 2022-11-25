@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="clockApp" lang="en">
+
+<head>
+  <script src="../angular.js"></script>
+
+  <!-- 1. Linking js file -->
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="TimeCtrl">
+  <h1>Cloak App</h1>
+  <p>The current time is: {{currentTime}}</p>
+
+  <!-- 2. ng-click -->
+  <button ng-click="updateTime()">Update Time</button>
+  <br>
+
+  <!-- 3. ng-model -->
+  Please enter you name:
+  <input ng-model='userName' type="text">
+  <p>Your name is {{userName}}</p>
+
+  <script>
+    /**
+     *  1.  Here we EXPORT the js into a seperate file & link it
+     * 
+     *  2.  Directive - NG-CLICK
+     *        connect js angular Scope function to button click 
+     *        (wouldn't work w/ onClick since it's specific to angular)
+     * 
+     *  3.  Directive - NG-MODEL 
+     *        Two way data binding
+     *        
+    */
+  </script>
+</body>
+
+</html>
