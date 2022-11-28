@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html ng-app="moduleApp" lang="en">
+<html ng-app="modulesApp" lang="en">
+
 <head>
   <title>Angular Modules</title>
   <script src="../angular.js"></script>
+
+  <!-- 3. Import -->
+  <script src="myModule.js"></script>
+
   <script src="app.js"></script>
 </head>
+
 <body ng-controller="HelloCtrl">
   <h1>Modules App</h1>
+
+  <!-- 4. Use the sub module controller like we would normally if it were in app.js -->
+  <div ng-controller="HelloCtrl as ctrl">
+    {{ctrl.helloMessage}}
+  </div>
+
+  <script>
+    /**
+     * https://youtu.be/oFB-Htbf6sI
+     * 
+     *  SUB MODULES
+     * 
+     *  1.  Create the sub module, whose setup is identical to how you would make a regular angular module.
+     *      (see myModule.js)
+     * 
+     *  2.  Import sub modules into the main module via the array (2nd) arg when creating the main module.
+     *      i.e. const app = angular('modulesApp',['subModule'])    
+     *      (see app.js)
+     * 
+     *  3.  Import sub module into HTML
+     * 
+     *  4.  Now we can use the sub Module controller just like how we've been using app.js controllers
+     * */
+  </script>
 </body>
+
 </html>

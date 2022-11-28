@@ -74,7 +74,10 @@
     // 3 - create angular MODULE:
     let module = angular.module(
       'myApp',  // module NAME
-      []        // array
+      []        // array 
+      /** 
+       * !  DO NOT OMIT the 2nd array ARG or it will try to import the module from somewhere else.
+      */
     )
 
     // 4 - set module CONTROLLER

@@ -1,6 +1,2 @@
-const app = angular.module('HelloCtrl', []);
-app.controller('HelloCtrl', HelloCtrl);
-
-function HelloCtrl() {
-  this.helloMessage = "I'm from the main module"
-}
+/** 2.  We can use the sub module by putting its name into the 2nd arg array */
+const app = angular.module('modulesApp', ['myHelloModule']);
