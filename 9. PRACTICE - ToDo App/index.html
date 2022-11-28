@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="todoApp" lang="en">
+
+<head>
+  <title>ToDo App</title>
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1>To Do App</h1>
+
+  <div ng-controller="todoCtrl as ctrl">
+    <p>Add a Todo:</p>
+    <input ng-model="ctrl.todoItem" type="text">
+    <br>
+    <button ng-click="ctrl.addTodoItem()">Add</button>
+
+    <p>Your Todos:</p>
+
+    <button ng-if="!ctrl.edit" ng-click="ctrl.toggleEdit()">Edit</button>
+    <button ng-if="ctrl.edit" ng-click="ctrl.toggleEdit()">Done</button>
+
+
+    <ol>
+      <!-- 1. using 'track by' so we can add duplicates w/o confusing if we have repeats -->
+      <li ng-repeat="todo in ctrl.todoList track by $index">
+        <span ng-hide="ctrl.edit" ng-bind="todo"></span>
+        <input ng-model="todo" ng-show="ctrl.edit" type="text">
+        <button ng-if="!ctrl.edit" ng-click="ctrl.deleteItem($index)">Delete</button>
+      </li>
+    </ol>
+  </div>
+  </div>
+</body>
+<script>
+  /**
+   *  1. using 'track by' so we can add duplicates w/o confusing if we have repeats
+   * 
+  */
+</script>
+
+</html>
