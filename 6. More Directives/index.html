@@ -1,3 +1,13 @@
+<script>
+  /**
+   *  1.  NG-HIDE/SHOW
+   *      Different from ng-if. ng-if removes if falsey. ng-hide just hides using CSS
+   * 
+   *  2.  NG-REPEAT - use it iterate through arrays
+   *      1.  Special variables - $index, $first, $middle, $last, $even $odd
+  */
+</script>
+
 <!DOCTYPE html>
 <html ng-app="moreDirectivesApp" lang="en">
 
@@ -13,7 +23,7 @@
     <input type="checkbox" ng-model='ctrl.checked' />
 
     <!-- 1. ng-hide -->
-    <p ng-hide="ctrl.checked">Some content</p>
+    <p ng-hide="!ctrl.checked">Some content</p>
     <p ng-if="ctrl.checked">Some content</p>
     <hr>
 
@@ -35,16 +45,5 @@
     </div>
   </div>
 </body>
-
-<script>
-  /**
-   *  1.  NG-HIDE/SHOW
-   *      Different from ng-if. ng-if removes if not sure. ng-hide just hides using CSS
-   * 
-   *  2.  NG-REPEAT - use it iterate through arrays
-   *      1.  Special variables - $index, $first, $middle, $last, $even $odd
-  */
-
-</script>
 
 </html>

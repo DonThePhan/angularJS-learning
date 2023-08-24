@@ -1,3 +1,15 @@
+<script>
+  /**
+   * https://youtu.be/Rjwz9DGac6s
+   * 
+   *  EXTERNAL MODULES (from the web)
+   *    1.  Import the script into HTML (we also inported the CSS for this example)
+   *    2.  Import the name of the module into the array (2nd arg) in the main app file
+   *    3.  Now we can use it in our HTML. In this case it's got a custome element.
+   *    * NOTE: we also added a 'tags' variable into the main module (app.js) that can be used in the sub module
+   * */
+</script>
+
 <!DOCTYPE html>
 <html ng-app="modulesApp" lang="en">
 
@@ -22,21 +34,9 @@
   </div>
 
   <div ng-controller="TagsDemoCtrl as ctrl2">
-    <!--  3. Use custom element from external module -->
+    <!--  3. Use custom element from external module <tags-input/> -->
     <tags-input ng-model="ctrl2.tags"></tags-input>
   </div>
-
-  <script>
-    /**
-     * https://youtu.be/Rjwz9DGac6s
-     * 
-     *  EXTERNAL MODULES (from the web)
-     *    1.  Import the script into HTML (we also inported the CSS for this example)
-     *    2.  Import the name of the module into the array (2nd arg) in the main app file
-     *    3.  Now we can use it in our HTML. In this case it's got a custome element.
-     *    * NOTE: we also added a 'tags' variable into the main module (app.js) that can be used in the sub module
-     * */
-  </script>
 </body>
 
 </html>

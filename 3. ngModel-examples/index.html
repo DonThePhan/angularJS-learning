@@ -1,3 +1,11 @@
+<script>
+  /**
+   *  1.  We can declare scope variables by just using ng-model. 
+   *      It will AUTOMATICALLY INITIALIZE as soon as we start changing the input values
+   *      This means we DON'T need to declare it in the JS side.
+   */
+</script>
+
 <!DOCTYPE html>
 <html ng-app="ngModelExamples" lang="en">
 
@@ -29,17 +37,9 @@
   <div>
     <p>Textbox: {{textString}}</p>
     <p>Checkbox:{{booleanValue}}</p>
-    <p>Date:{{dateValue.toTimeString()}}</p>
+    <p>Date:{{dateValue.toDateString()}}</p>
     <p>Radio: {{radioValue}}</p>
   </div>
 </body>
-
-<script>
-  /**
-   *  1.  We can declare scope variables by just using ng-model. 
-   *      It will AUTOMATICALLY INITIALIZE as soon as we start changing the input values
-   *      This means we DON'T need to declare it in the JS side.
-   */
-</script>
 
 </html>

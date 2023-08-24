@@ -1,3 +1,17 @@
+<script>
+  /**
+   *  1.  DUPLICATE VARIABLE NAMES
+   *        Each time we make a new controller (in JS), a NEW $scope object is created. They are NOT the same 
+   * 
+   *  2.  NESTED CONTROLLERS
+   **       HTML side:
+   *          with nested, best practice is to use the 'as' notation in HTML. 
+   *          This allows us to use the specific variable from the specified controller's scope
+   **       JS side:
+   *          $scope arg is now left empty & we use 'this' instead
+   * */
+</script>
+
 <!DOCTYPE html>
 <html ng-app="nestedApp" lang="en">
 
@@ -23,22 +37,7 @@
       <p>{{c1.testProp}}</p>
       <p>{{c2.testProp}}</p>
     </div>
-
   </div>
-
 </body>
-<script>
-  /**
-   *  1.  DUPLICATE VARIABLE NAMES
-   *        Each time we make a new controller (in JS), a NEW $scope object is created. They are NOT the same 
-   * 
-   *  2.  NESTED CONTROLLERS
-   **       HTML side:
-   *          with nested, best practice is to use the 'as' notation in HTML. 
-   *          This allows us to use the specific variable from the specified controller's scope
-   **       JS side:
-   *          $scope arg is now left empty & we use 'this' instead
-   * */
-</script>
 
 </html>
