@@ -1,0 +1,32 @@
+<script>
+  /**
+  *   Seems like the equivalent to React components, where you can use them as building blocks
+  *
+  *   1. Create component folder (i.e. postsComponent) & subfiles:
+  *       .1 Component html (i.e. posts.html)
+  *       .2 Component js (i.e. post.component.html)
+  *   2. Below, import component js script
+  *   3. Below, call the component name (Angular will automatically look for the snake-case version) 
+  */
+</script>
+
+<!DOCTYPE html>
+<html ng-app="myAppModule" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../angular.js"></script>
+  <script src="app.js"></script>
+
+  <!--* 2.  import component js -->
+  <script src="postsComponent/posts.component.js"></script>
+</head>
+
+<body>
+  <!--* 3.  snake-case version of component name (i.e. "postsComponent") -->
+  <posts-component></posts-component>
+</body>
+
+</html>
